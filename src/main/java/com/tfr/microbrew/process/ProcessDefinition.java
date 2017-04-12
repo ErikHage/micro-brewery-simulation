@@ -20,7 +20,9 @@ public class ProcessDefinition {
 
     private final ProcessStep packageStep = new TerminalStep(BrewStep.PACKAGE, BrewHouse.INVENTORY, MAX_INVENTORY);
 
-    public ProcessDefinition() {
+    private static ProcessDefinition INSTANCE;
+
+    private ProcessDefinition() {
         preparationStep.setNextStep(mashingStep);
 
         mashingStep.setPreviousStep(preparationStep);
@@ -36,6 +38,13 @@ public class ProcessDefinition {
         carbonationStep.setNextStep(packageStep);
 
         packageStep.setPreviousStep(carbonationStep);
+    }
+
+    public static ProcessDefinition getInstance() {
+        if(INSTANCE == null) {
+            INSTANCE = new ProcessDefinition();
+        }
+        return INSTANCE;
     }
 
     public ProcessStep getInitialStep() {

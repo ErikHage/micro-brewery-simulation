@@ -106,6 +106,8 @@ public class PreparationStep implements ProcessStep {
                 Collections.min(counts.entrySet(), Comparator.comparingDouble(Map.Entry::getValue));
 
         if(entry.getValue() < MAX_IN_PROGRESS_BATCHES_SAME_RECIPE) {
+//            logger.debug("Entry key: " + entry.getKey());
+//            logger.debug(RECIPES.get(entry.getKey()).toString());
             return new Batch(BATCH_ID.getAndIncrement(), RECIPES.get(entry.getKey()));
         }
         return null;

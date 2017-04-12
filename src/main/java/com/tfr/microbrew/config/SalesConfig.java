@@ -1,6 +1,7 @@
 package com.tfr.microbrew.config;
 
 /**
+ *
  * Created by Erik on 4/11/2017.
  */
 public interface SalesConfig {

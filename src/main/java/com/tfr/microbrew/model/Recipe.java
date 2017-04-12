@@ -29,8 +29,17 @@ public class Recipe {
         this.stepTimes.put(BrewStep.CARBONATE, carbonationTime);
     }
 
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "name='" + name + '\'' +
+                ", volume=" + volume +
+                ", stepTimes=" + stepTimes +
+                '}';
+    }
+
     public long getStepTime(BrewStep step) {
-        return stepTimes.get(step.value());
+        return stepTimes.get(step);
     }
 
     public String getName() {
@@ -42,7 +51,7 @@ public class Recipe {
     }
 
     public long getMashTime() {
-        return stepTimes.get(StepNames.MASH);
+        return stepTimes.get(BrewStep.MASH);
     }
 
     public void setMashTime(long mashTime) {

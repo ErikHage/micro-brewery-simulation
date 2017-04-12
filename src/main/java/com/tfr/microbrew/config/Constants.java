@@ -61,7 +61,7 @@ public interface Constants {
         int MAX_FERMENTING_BATCHES = 8;
         int MAX_CARBONATING_BATCHES = 2;
 
-        double INVENTORY_THRESHOLD = 100.0;
+        double INVENTORY_THRESHOLD = 90.0;
         double MAX_INVENTORY = 2000.0;
 
     }

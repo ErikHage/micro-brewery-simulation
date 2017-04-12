@@ -46,4 +46,12 @@ public class Batch extends Recipe {
     public void setStepStartTime() {
         this.stepStartTime = System.currentTimeMillis();
     }
+
+    @Override
+    public String toString() {
+        return "Batch{" +
+                "batchId=" + batchId +
+                ", name=" + super.getName() +
+                '}';
+    }
 }
